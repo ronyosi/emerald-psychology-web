@@ -1,0 +1,13 @@
+Colour Scheme:
+#00C9CD
+#00a5a9
+#00a293
+#00827f
+#006167
+kayla yosipovichFonts:
+
+https://www.myfonts.com/products/medium-bodoni-serial-176118?queryId=1a45fc8f7d68ddd6d72822aa50e0855b&index=universal_search_data&objectIDs=8565961001
+
+Studio Sans:
+https://www.myfonts.com/products/regular-demo-studiosans-284433?queryId=46f5b390b7849fc09a9698817e2c8b4a&index=universal_search_data&objectIDs=8632670001
+
