@@ -92,15 +92,33 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-darker));
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-darker) 50%, var(--dark-color) 100%);
+    position: relative;
     color: var(--white);
     padding: 100px 20px;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    opacity: 0.6;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -255,10 +273,31 @@ body {
 
 /* Page Hero */
 .page-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-darker));
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-darker) 50%, var(--dark-color) 100%);
+    position: relative;
     color: var(--white);
     padding: 60px 20px;
     text-align: center;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    opacity: 0.6;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .page-hero h1 {
