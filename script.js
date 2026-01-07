@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             // Get form data
@@ -58,14 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // In a real application, you would send this data to a server
-            // For now, we'll just show a success message
-            console.log('Form submitted:', formData);
+            try {
+                // Submit to Google Apps Script
+                await fetch('https://script.google.com/macros/s/AKfycbyF6kWH_VV6fvutb3LOoITsZhWA7noE72cH5V5B74IMXMohwyalVNyjtYCxJDYNul7PiA/exec', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData),
+                    mode: 'no-cors'
+                });
 
-            showMessage('Thank you for your message! We will get back to you as soon as possible.', 'success');
-
-            // Reset form
-            contactForm.reset();
+                showMessage('Thank you for your message! We will get back to you as soon as possible.', 'success');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showMessage('Something went wrong. Please try again or email us directly at drkayla@emeraldpsychology.ca', 'error');
+            }
         });
     }
 
